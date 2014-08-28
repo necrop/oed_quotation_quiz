@@ -1,0 +1,136 @@
+
+#questionContainer {
+	opacity: 0;
+	background-color: #C6E7CE;
+	margin-bottom: 0;
+}
+
+#quotationText, #mainCitation {
+	color: darkBlue;
+	padding-left: 0.5em;
+	text-indent: -0.5em;
+}
+
+#quotationText {
+	font-family: Georgia, "Times New Roman", Verdana, Helvetica;
+	font-size: 3.5em;
+	line-height: 120%;
+}
+
+#mainCitation {
+	opacity: 0;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	font-size: 2.7em;
+}
+
+#mainCitationLink {
+	font-size: 0.4em;
+	white-space: nowrap;
+	padding-left: 3em;
+}
+
+
+#questionReviewSection > div {
+	margin-bottom: 0.4em;
+	font-size: 2.2em;
+}
+
+#reviewMessage {
+	opacity: 0;
+}
+
+/* User interaction - slider, etc. */
+#sliderText {
+	color: red;
+}
+
+#slider {
+	font-size: 0.6em;
+}
+
+.ui-slider-horizontal .ui-state-default {
+	background: none;
+	background-color: red;
+}
+
+#skipButtonDead {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+#yearChangeButtons {
+	padding-left: 1em;
+}
+
+
+
+/* Display of full citation + quotation */
+.author {
+	font-variant: small-caps;
+}
+.qtext {
+	padding-left: 1em;
+}
+
+#aftermathContainer, #endgameContainer {
+	display: none;
+	opacity: 0;
+}
+
+#detailsContainer {
+	opacity: 0;
+	margin-top: 0;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+
+
+
+/* Table of previous quotations */
+#previousContainer {
+	margin-top: 5em;
+}
+
+.previousQuotationContainer {
+	margin-top: 3em;
+}
+
+.previousQuotationContainer div {
+	padding-left: 4em;
+}
+
+.previousQuotationContainer p {
+	padding-left: 2em;
+	text-indent: -2em;
+	font-size: 1.2em;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.previousQuotationCounter {
+	color: blue;
+	padding-right: 1em;
+}
+
+
+
+/* Results page */
+
+#questionsAnswered {
+	margin-top: 10em;
+}
+
+
+
+/* New quiz page */
+#smallPrint {
+	margin-top: 10em;
+}
+
+#smallPrint div {
+	padding-left: 1em;
+	text-indent: -1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}

@@ -1,0 +1,74 @@
+{% extends "qq/gamebase.html" %}
+{% load staticfiles %}
+
+
+{% block mainsection %}
+	<div class="jumbotron" id="questionContainer">
+		<p id="questionCounter"></p>
+		<div id="quotationText">&ldquo;{{ quotation.text }}&rdquo;</div>
+		<div id="mainCitation">
+			<a id="mainCitationLink" href="__ENTRYURL__" target="oed" title="This quotation appears in the OED entry for &ldquo;__LEMMA__&rdquo;. Click to view in OED Online."><span class="glyphicon glyphicon-new-window"></span></a>
+		</div>
+
+		<div id="questionReviewSection">
+
+			<div id="yourGuess">
+				Your guess: <span id="sliderText"></span>
+				<span id="yearChangeButtons" class="btn-group">
+					<button id="minusOneYear" class="btn btn-small btn-danger" title="Back one year"><span class="glyphicon glyphicon-chevron-left"></span></button>
+					<button id="plusOneYear" class="btn btn-small btn-danger" title="Forward one year"><span class="glyphicon glyphicon-chevron-right"></span></button>
+				</span>
+				<span id="reviewMessage"></span>
+			</div>
+			<div id="sliderContainer">
+				<div id="slider"></div>
+				<p>[Drag the slider to change]</p>
+				<div class="btn-group">
+					<button id="submitButton" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-ok"></span> Submit answer</button>
+					<button id="skipButton" class="btn btn-lg btn-warning" title="Skip this quotation and try another instead. You have __SKIPSLEFT__ left."><span class="glyphicon glyphicon-share-alt"></span> Skip</button>
+					<button id="skipButtonDead" class="btn btn-lg btn-warning" title="You have no skips left."><span class="glyphicon glyphicon-share-alt"></span> skip</button>
+				</div>
+			</div>
+
+			<div id="scoreContainer">
+			</div>
+
+			<div id="aftermathContainer">
+				<div class="btn-group">
+					<button id="nextButton" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-forward"></span> Next question</button>
+					<a class="btn btn-lg btn-warning" href="{% url 'qq:results' %}" title="Quit this game"><span class="glyphicon glyphicon-flag"></span> Quit</a>
+				</div>
+			</div>
+
+			<div id="endgameContainer">
+				<i>Game over, man. Game over.</i>
+				<span class="btn-group">
+					<a class="btn btn-lg btn-primary" href="{% url 'qq:results' %}" title="Review results for this game"><span class="glyphicon glyphicon-chevron-right"></span> Results</a>
+					<a class="btn btn-lg btn-info" href="{% url 'qq:newquiz' %}" title="Start a new game"><span class="glyphicon glyphicon-star-empty"></span> New game</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="detailsContainer" class="jumbotron">
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</div>
+
+
+	<div class="jumbotron" id="previousContainer">
+	</div>
+{% endblock %}
+
+
+{% block javascript_data %}
+	var ajaxurl = "{% url 'qq:answers' id=quotation.id %}";
+{% endblock %}
+
+
+{% block extra_scripts %}
+	<script src="{% static 'qq/js/quotation.js' %}"></script>
+	<script src="{% static 'qq/js/navbar.js' %}"></script>
+	<script src="{% static 'qq/js/question.js' %}"></script>
+{% endblock %}

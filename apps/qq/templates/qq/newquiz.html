@@ -1,0 +1,43 @@
+{% extends "qq/base.html" %}
+{% load staticfiles %}
+
+
+{% block pagecontent %}
+	<div class="container theme-showcase" role="main">
+		<div class="jumbotron">
+			<h1>OED quotation quiz</h1>
+			<h2>Guess the dates of quotations taken from the OED. Win points if you're warm, lose points if you're cold.</h2>
+			<h2>How many questions can you answer before you run out of points?</h2>
+
+			<p>&nbsp;</p>
+			<div class="btn-group">
+				<a class="btn btn-lg btn-info" href="{% url 'qq:newquestion' %}"><span class="glyphicon glyphicon-star-empty"></span> Start quiz</a>
+			</div>
+
+
+			<div id="smallPrint">
+				<h3>About</h3>
+				<div>The OED contains over <a href="http://public.oed.com/the-oed-today/rewriting-the-oed/collecting-the-evidence/">three million quotations</a> illustrating English usage throughout its history. Although a typical quotation may only be fifteen or twenty words long, there are often several clues to a quotation's date: vocabulary, spelling, conventions of capitalization or punctuation, the topic of the quotation, and references to people or events. If you're lucky (or extremely well-read), you may even recognize some of the passages.</div>
+
+				<h3>How to play</h3>
+				<div>Quotations are picked at random, and may be from any year between 1500 and 2000. If you can't guess the date for a particular quotation, you can skip it and try another. But you are only allowed three skips per game.</div>
+				<div>You start with 100 points. You win points if you guess within 10 years of the correct date. You lose points if you are more than 10 years out; the further out you are, the more points you lose.</div>
+				<div>Get the date exactly right to win a bonus of 50 points.</div>
+				<div>The game ends when you run out of points.</div>
+
+				<h3>Links to OED Online</h3>
+				<div>When the date and source of each quotation is revealed, this includes a link back to its entry in OED Online. You will need an <a href="http://public.oed.com/how-to-subscribe">OED Online subscription</a> in order to view the entry.</div>
+
+				<h3>Why no pre-1500 quotations?</h3>
+				<div>The OED includes quotation evidence from the whole written history of English, including <a href="http://public.oed.com/aspects-of-english/english-in-time/old-english-an-overview/">Old English</a> and <a href="http://public.oed.com/aspects-of-english/english-in-time/middle-english-an-overview/">Middle English</a> manuscript sources. But many of these early sources are hard to date exactly, so are not suitable for this game. (We've also omitted any post-1500 quotations which have approximate or speculative dates.)</div>
+			<div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block extra_scripts %}
+	<script src="{% static 'qq/js/storage.js' %}"></script>
+	<script src="{% static 'qq/js/newquiz.js' %}"></script>
+{% endblock %}
+

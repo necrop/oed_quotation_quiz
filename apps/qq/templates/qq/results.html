@@ -1,0 +1,35 @@
+{% extends "qq/gamebase.html" %}
+{% load staticfiles %}
+
+
+{% block mainsection %}
+
+	<div class="jumbotron">
+		<div id="resultsContainer">
+			<h2>You completed __NUMQUESTIONS____MESSAGE__.</h2>
+			<p>Your best guess was __BESTGUESS__</p>
+			<p>Your worst guess was __WORSTGUESS__</p>
+		</div>
+
+		<p>&nbsp;</p>
+		<div class="btn-group">
+			<a class="btn btn-lg btn-info" href="{% url 'qq:newquiz' %}"><span class="glyphicon glyphicon-star-empty"></span> New game</a>
+		</div>
+
+		<div id="questionsAnswered">
+		</div>
+	</div>
+
+
+
+
+{% endblock %}
+
+
+
+{% block extra_scripts %}
+	<script src="{% static 'qq/js/quotation.js' %}"></script>
+	<script src="{% static 'qq/js/navbar.js' %}"></script>
+	<script src="{% static 'qq/js/results.js' %}"></script>
+{% endblock %}
+
